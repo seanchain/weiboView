@@ -57,7 +57,7 @@
     
     self.introF = CGRectMake(introLabelX, introLabelY, introLabelW, introLabelH);
     // 设置配图的frame
-    if (_weibo.picture) {// 有配图
+    if (![_weibo.picture isEqualToString:@""]) {// 有配图
         CGFloat pictureViewX = iconViewX;
         CGFloat pictureViewY = CGRectGetMaxY(self.introF) + padding;
         CGFloat pictureViewW = 200;

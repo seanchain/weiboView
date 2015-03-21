@@ -10,6 +10,8 @@
 	<string>微博</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>41DDCABB6E3443C3FE32E2CC955594F6A6F7262B</key>
+		<string>github.com:seanchain/weiboView.git</string>
 		<key>DC7F97AB2D172D129A85A436B36923AF575EA78A</key>
 		<string>https://github.com/piglikeYoung/weibo.git</string>
 	</dict>
@@ -17,15 +19,17 @@
 	<string>微博.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>DC7F97AB2D172D129A85A436B36923AF575EA78A</key>
+		<key>41DDCABB6E3443C3FE32E2CC955594F6A6F7262B</key>
 		<string>../..</string>
+		<key>DC7F97AB2D172D129A85A436B36923AF575EA78A</key>
+		<string>../../../%E5%BE%AE%E5%8D%9A</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/piglikeYoung/weibo.git</string>
+	<string>github.com:seanchain/weiboView.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>DC7F97AB2D172D129A85A436B36923AF575EA78A</string>
+	<string>41DDCABB6E3443C3FE32E2CC955594F6A6F7262B</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -35,6 +39,14 @@
 			<string>DC7F97AB2D172D129A85A436B36923AF575EA78A</string>
 			<key>IDESourceControlWCCName</key>
 			<string>%E5%BE%AE%E5%8D%9A</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>41DDCABB6E3443C3FE32E2CC955594F6A6F7262B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>weiboView</string>
 		</dict>
 	</array>
 </dict>

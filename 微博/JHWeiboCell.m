@@ -9,6 +9,7 @@
 #import "JHWeiboCell.h"
 #import "NJWeibo.h"
 #import "JHWeiboFrame.h"
+#import "AFHTTPRequestOperation.h"
 
 #define JHNameFont [UIFont systemFontOfSize:15]
 #define JHTextFont [UIFont systemFontOfSize:16]
@@ -112,6 +113,22 @@
 {
     NJWeibo *weibo = self.weiboFrame.weibo;
     
+    
+    NSString *urlstr = [NSString stringWithFormat:@"http://www.chensihang.com/CSHiOS/portraits/cs.jpg"];
+    NSURL *url = [NSURL URLWithString:urlstr];
+    NSURLRequest *req = [NSURLRequest requestWithURL:url];
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:req];
+    operation.responseSerializer = [AFImageResponseSerializer serializer];
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        self.iconView.image = responseObject;
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    [operation start];
+
+    
+    
     // 设置头像
     self.iconView.image = [UIImage imageNamed:weibo.icon];
     // 设置昵称
@@ -124,8 +141,21 @@
     self.introLabel.text = weibo.text;
     
     // 设置配图
-    if (weibo.picture) {
+    if (![weibo.picture isEqualToString:@""]) {
         self.pictureView.image = [UIImage imageNamed:weibo.picture];
+        NSLog(@"%@", weibo.picture);
+        NSString *urlstr = weibo.picture;
+        NSURL *url = [NSURL URLWithString:urlstr];
+        NSURLRequest *req = [NSURLRequest requestWithURL:url];
+        AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:req];
+        operation.responseSerializer = [AFImageResponseSerializer serializer];
+        [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+            
+            self.pictureView.image = responseObject;
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"Error: %@", error);
+        }];
+        [operation start];
         self.pictureView.hidden = NO;
     }else{
         self.pictureView.hidden = YES;
@@ -152,7 +182,8 @@
     
     // 设置配图的frame
     
-    if (self.weiboFrame.weibo.picture) {// 有配图
+    if (![self.weiboFrame.weibo.picture isEqualToString:@""]) {// 有配图
+        NSLog(@"%@", self.weiboFrame.weibo.picture);
         self.pictureView.frame = self.weiboFrame.pictrueF;
     }
 }
