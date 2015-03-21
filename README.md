@@ -1,2 +1,0 @@
-# weiboView
-weiboView用于客户端的wordpress生成
