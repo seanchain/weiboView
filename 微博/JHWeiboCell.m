@@ -133,9 +133,14 @@
     self.iconView.image = [UIImage imageNamed:weibo.icon];
     // 设置昵称
     self.nameLabel.text = weibo.name;
+    self.nameLabel.textColor = [UIColor blackColor];
+    self.nameLabel.font = [UIFont boldSystemFontOfSize:15];
     
     // 设置发博时间
-    self.nameLabel.textColor = [UIColor blackColor];
+    self.timeLabel.text = weibo.time;
+    self.timeLabel.textColor = [UIColor grayColor];
+    self.timeLabel.font = [UIFont boldSystemFontOfSize:13];
+    
     
     // 设置内容
     self.introLabel.text = weibo.text;

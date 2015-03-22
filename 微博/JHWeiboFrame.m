@@ -12,6 +12,7 @@
 
 #define JHNameFont [UIFont systemFontOfSize:15]
 #define JHTextFont [UIFont systemFontOfSize:16]
+#define TimeFont [UIFont systemFontOfSize:12]
 
 @implementation JHWeiboFrame
 
@@ -22,31 +23,33 @@
     
     // 间隙
     CGFloat padding = 10;
+    CGFloat margin = 20;
     
     // 设置头像的frame
     CGFloat iconViewX = padding;
     CGFloat iconViewY = padding;
-    CGFloat iconViewW = 30;
-    CGFloat iconViewH = 30;
+    CGFloat iconViewW = 38;
+    CGFloat iconViewH = 38;
     self.iconF = CGRectMake(iconViewX, iconViewY, iconViewW, iconViewH);
     
     // 设置昵称的frame
     // 昵称的x = 头像最大的x + 间隙
     CGFloat nameLabelX = CGRectGetMaxX(self.iconF) + padding;
     // 计算文字的宽高
-    CGSize nameSize = [self sizeWithString:_weibo.name font:JHNameFont maxSize:CGSizeMake(MAXFLOAT, MAXFLOAT)];
+    CGSize nameSize = [self sizeWithString:_weibo.name font:[UIFont boldSystemFontOfSize:15] maxSize:CGSizeMake(MAXFLOAT, MAXFLOAT)];
+    CGSize timeSize = [self sizeWithString:_weibo.time font:[UIFont systemFontOfSize:15] maxSize:CGSizeMake(MAXFLOAT, MAXFLOAT)];
     CGFloat nameLabelH = nameSize.height;
     CGFloat nameLabelW = nameSize.width;
-    CGFloat nameLabelY = iconViewY + (iconViewH - nameLabelH) * 0.5;
+    CGFloat nameLabelY = iconViewY;
     self.nameF = CGRectMake(nameLabelX, nameLabelY, nameLabelW, nameLabelH);
     
-    // 设置vip的frame
-    CGFloat vipViewX = CGRectGetMaxX(self.nameF) + padding;
-    CGFloat vipViewY = nameLabelY;
-    CGFloat vipViewW = 14;
-    CGFloat vipViewH = 14;
+    // 设置时间的frame
+    CGFloat vipViewX = nameLabelX;
+    CGFloat vipViewY = nameLabelY + margin;
+    CGFloat vipViewW = timeSize.width;
+    CGFloat vipViewH = timeSize.height;
     self.vipF = CGRectMake(vipViewX, vipViewY, vipViewW, vipViewH);
-    
+    NSLog(@"%f", MAXFLOAT);
     // 设置正文的frame
     CGFloat introLabelX = iconViewX;
     CGFloat introLabelY = CGRectGetMaxY(self.iconF) + padding;
