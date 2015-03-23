@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+
+
 @class JHWeiboFrame;
 
 @interface JHWeiboCell : UITableViewCell

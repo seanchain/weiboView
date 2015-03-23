@@ -21,9 +21,9 @@
 
 @implementation ViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
 }
 
 #pragma mark - 数据源
@@ -58,8 +58,8 @@
         NSMutableArray *models = [NSMutableArray arrayWithCapacity:dictArray.count];
         
         
-        NSURL *url = [NSURL URLWithString:@"http://chensihang.com/blog/?json=1"];
-        NSString *str = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
+        //NSURL *url = [NSURL URLWithString:@"http://chensihang.com/blog/?json=1"];
+        NSString *str = [NSString stringWithContentsOfFile:@"/Users/seanchain/Desktop/index.txt" encoding:NSUTF8StringEncoding error:nil];
         NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
         NSArray *arr = [json objectForKey:@"posts"];
@@ -100,8 +100,9 @@
             [dictarrs addObject:tempdic];
         }
         
+        dictarrs[0][@"picture"] = @"http://localhost:8888/pic/profile.jpg";
         NSLog(@"%@", dictarrs);
-        
+
         
         
         for (NSDictionary *dict in dictarrs) {
@@ -131,6 +132,5 @@
 {
     return YES;
 }
-
 
 @end

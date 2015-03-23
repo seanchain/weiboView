@@ -37,6 +37,8 @@
  */
 @property (nonatomic, assign) CGFloat cellHeight;
 
+@property (nonatomic, assign) CGRect titleF;
+
 /**
  *  模型数据
  */

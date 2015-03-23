@@ -31,6 +31,7 @@
 @property (nonatomic, weak) UILabel *introLabel; //文章第一段的内容
 @property (nonatomic, weak) UILabel *timeLabel; //发帖时间的label
 @property (nonatomic, weak) UILabel *categories; //当前博文所属的类型
+@property (nonatomic, weak) UILabel *titleLabel; //当前博文的标题
 
 
 @end
@@ -48,6 +49,8 @@
     if (cell == nil) {
         cell = [[JHWeiboCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
+    
+    
     return cell;
 }
 
@@ -65,6 +68,7 @@
         UIImageView *iconView = [[UIImageView alloc] init];
         [self.contentView addSubview:iconView];
         self.iconView = iconView;
+        
         
         // 2.创建昵称
         UILabel *nameLabel = [[UILabel alloc] init];
@@ -91,6 +95,13 @@
         UIImageView *pictureView = [[UIImageView alloc] init];
         [self.contentView addSubview:pictureView];
         self.pictureView = pictureView;
+        
+        //6.创建标题
+        UILabel *titleLabel = [[UILabel alloc] init];
+        titleLabel.font = JHTextFont;
+        titleLabel.numberOfLines = 0;
+        [self.contentView addSubview:titleLabel];
+        self.titleLabel = titleLabel;
     }
     
     return self;
@@ -114,7 +125,7 @@
     NJWeibo *weibo = self.weiboFrame.weibo;
     
     
-    NSString *urlstr = [NSString stringWithFormat:@"http://www.chensihang.com/CSHiOS/portraits/cs.jpg"];
+    NSString *urlstr = [NSString stringWithFormat:@"http://localhost:8888/pic/cs.jpg"];
     NSURL *url = [NSURL URLWithString:urlstr];
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:req];
@@ -141,6 +152,7 @@
     self.timeLabel.textColor = [UIColor grayColor];
     self.timeLabel.font = [UIFont boldSystemFontOfSize:13];
     
+    self.titleLabel.text = weibo.title;
     
     // 设置内容
     self.introLabel.text = weibo.text;
@@ -157,6 +169,9 @@
         [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
             
             self.pictureView.image = responseObject;
+            NSLog(@"%lf", self.pictureView.image.size.width);
+            NSLog(@"%lf", self.pictureView.image.size.height);
+            
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"Error: %@", error);
         }];
@@ -184,6 +199,7 @@
     
     // 设置正文的frame
     self.introLabel.frame = self.weiboFrame.introF;
+    self.titleLabel.frame = self.weiboFrame.titleF;
     
     // 设置配图的frame
     
