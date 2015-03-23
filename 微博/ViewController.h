@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CBStoreHouseRefreshControl.h"
 
+@class CBStoreHouseRefreshControl;
 
 @interface ViewController : UITableViewController
+
+@property (nonatomic, strong) CBStoreHouseRefreshControl *storeHouseRefreshControl;
+
 @end
 

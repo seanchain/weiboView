@@ -11,6 +11,7 @@
 #import "JHWeiboCell.h"
 #import "JHWeiboFrame.h"
 #import "HTMLParser.h"
+#import "CBStoreHouseRefreshControl.h"
 
 @interface ViewController ()
 
@@ -25,6 +26,19 @@ NSIndexPath *idxpth;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"沉思·航";
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithWhite:0.1 alpha:1];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+    
+    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_pattern"]];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.backgroundColor = [UIColor colorWithWhite:45.f/255.f alpha:1];
+    
+    // Let the show begins
+    self.storeHouseRefreshControl = [CBStoreHouseRefreshControl attachToScrollView:self.tableView target:self refreshAction:@selector(refreshTriggered:) plist:@"AKTA" color:[UIColor whiteColor] lineWidth:1.5 dropHeight:80 scale:1 horizontalRandomness:150 reverseLoadingAnimation:YES internalAnimationFactor:0.5];
+    
 }
 
 #pragma mark - 数据源
@@ -156,6 +170,37 @@ NSIndexPath *idxpth;
 -(BOOL)prefersStatusBarHidden
 {
     return YES;
+}
+
+
+#pragma mark - Notifying refresh control of scrolling
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [self.storeHouseRefreshControl scrollViewDidScroll];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    [self.storeHouseRefreshControl scrollViewDidEndDragging];
+}
+
+#pragma mark - Listening for the user to trigger a refresh
+
+- (void)refreshTriggered:(id)sender
+{
+    [self performSelector:@selector(finishRefreshControl) withObject:nil afterDelay:3 inModes:@[NSRunLoopCommonModes]];
+}
+
+- (void)finishRefreshControl
+{
+    [self.storeHouseRefreshControl finishingLoading];
+    NSLog(@"Hello, world");
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 @end
