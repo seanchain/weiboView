@@ -20,17 +20,17 @@
                     <navigationItem key="navigationItem" id="kvC-Wb-ovZ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <segue destination="RYQ-FN-5LM" kind="push" id="60u-Ei-WDA"/>
+                        <segue destination="RYQ-FN-5LM" kind="push" identifier="newscontent" id="60u-Ei-WDA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jqE-1y-ZKK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="329" y="450"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail Controller-->
         <scene sceneID="cW2-Am-I2Z">
             <objects>
-                <viewController id="RYQ-FN-5LM" sceneMemberID="viewController">
+                <viewController id="RYQ-FN-5LM" customClass="DetailController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aNj-ex-Kku">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

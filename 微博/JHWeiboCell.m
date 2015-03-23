@@ -41,7 +41,6 @@
         cell = [[JHWeiboCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
-    
     return cell;
 }
 

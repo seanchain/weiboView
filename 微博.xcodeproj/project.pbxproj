@@ -19,6 +19,7 @@
 		7785ECF41ABDD73700B4C223 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 7785ECE91ABDD73700B4C223 /* AFURLRequestSerialization.m */; };
 		7785ECF51ABDD73700B4C223 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 7785ECEB1ABDD73700B4C223 /* AFURLResponseSerialization.m */; };
 		7785ECF61ABDD73700B4C223 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7785ECED1ABDD73700B4C223 /* AFURLSessionManager.m */; };
+		77D346241ABFC2D500E87931 /* DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D346231ABFC2D500E87931 /* DetailController.m */; };
 		7DC486761AA581FB00A075F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC486751AA581FB00A075F4 /* main.m */; };
 		7DC486791AA581FB00A075F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC486781AA581FB00A075F4 /* AppDelegate.m */; };
 		7DC4867C1AA581FB00A075F4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC4867B1AA581FB00A075F4 /* ViewController.m */; };
@@ -78,6 +79,8 @@
 		7785ECEB1ABDD73700B4C223 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		7785ECEC1ABDD73700B4C223 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		7785ECED1ABDD73700B4C223 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		77D346221ABFC2D500E87931 /* DetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailController.h; sourceTree = "<group>"; };
+		77D346231ABFC2D500E87931 /* DetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailController.m; sourceTree = "<group>"; };
 		7DC486701AA581FB00A075F4 /* 微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DC486741AA581FB00A075F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DC486751AA581FB00A075F4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -202,6 +205,8 @@
 				7DDDCA2E1AA5C69100FA0EEE /* JHWeiboFrame.h */,
 				7DDDCA2F1AA5C69100FA0EEE /* JHWeiboFrame.m */,
 				7DC4867D1AA581FB00A075F4 /* Main.storyboard */,
+				77D346221ABFC2D500E87931 /* DetailController.h */,
+				77D346231ABFC2D500E87931 /* DetailController.m */,
 				7DC486801AA581FB00A075F4 /* Images.xcassets */,
 				7DC486821AA581FB00A075F4 /* LaunchScreen.xib */,
 				7DC486731AA581FB00A075F4 /* Supporting Files */,
@@ -377,6 +382,7 @@
 			files = (
 				7785ECF61ABDD73700B4C223 /* AFURLSessionManager.m in Sources */,
 				7785ECF31ABDD73700B4C223 /* AFURLConnectionOperation.m in Sources */,
+				77D346241ABFC2D500E87931 /* DetailController.m in Sources */,
 				7785ECEE1ABDD73700B4C223 /* AFHTTPRequestOperation.m in Sources */,
 				7785ECD61ABDC76100B4C223 /* HTMLNode.m in Sources */,
 				7785ECEF1ABDD73700B4C223 /* AFHTTPRequestOperationManager.m in Sources */,

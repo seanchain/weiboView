@@ -21,6 +21,7 @@
 
 @implementation ViewController
 
+NSIndexPath *idxpth;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -118,6 +119,30 @@
     return _statusFrames;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    idxpth = indexPath;
+    UITableViewCell *cell = (UITableViewCell *)[tableView cellForRowAtIndexPath:idxpth];
+    if (cell.tag == 0) {
+        cell.selected = NO;
+    }else{
+        [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:YES];
+    }
+    [self performSegueWithIdentifier:@"newscontent" sender:self.view];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    id destController = segue.destinationViewController;
+    [destController setValue:idxpth forKey:@"indexpath"];
+}
+
+
 #pragma mark - 代理方法
 // 这个方法比cellForRowAtIndexPath先调用，即创建cell的时候得先知道它的高度，所以高度必须先计算
 // 所以在懒加载的时候获取微博的数据立即去计算行高
@@ -127,6 +152,7 @@
     JHWeiboFrame *wbf = self.statusFrames[indexPath.row];
     return wbf.cellHeight;
 }
+
 
 -(BOOL)prefersStatusBarHidden
 {
