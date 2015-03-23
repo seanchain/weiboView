@@ -41,7 +41,7 @@
     // 计算文字的宽高
     CGSize nameSize = [self sizeWithString:_weibo.name font:[UIFont boldSystemFontOfSize:15] maxSize:CGSizeMake(MAXFLOAT, MAXFLOAT)];
     CGSize timeSize = [self sizeWithString:_weibo.time font:[UIFont systemFontOfSize:15] maxSize:CGSizeMake(MAXFLOAT, MAXFLOAT)];
-    CGSize titleSize = [self sizeWithString:_weibo.title font:JHTextFont maxSize:CGSizeMake(viewW - padding * 2, MAXFLOAT)];
+    CGSize titleSize = [self sizeWithString:_weibo.title font:[UIFont boldSystemFontOfSize:22] maxSize:CGSizeMake(viewW - padding * 2, MAXFLOAT)];
     CGFloat nameLabelH = nameSize.height;
     CGFloat nameLabelW = nameSize.width;
     CGFloat nameLabelY = iconViewY;

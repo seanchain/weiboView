@@ -16,15 +16,6 @@
 
 @interface JHWeiboCell ()
 
-/*
- @property (nonatomic, copy) NSString *text; // 内容，为wordpress文章的第一段
- @property (nonatomic, copy) NSString *icon; // 头像,为作者本人的头像
- @property (nonatomic, copy) NSString *name; // 昵称，为作者本人的昵称
- @property (nonatomic, copy) NSString *picture; // 配图，为wordpress的特色图
- @property (nonatomic, copy) NSString *time; //发帖时间
- @property (nonatomic, copy) NSString *categories; //类型
- */
-
 @property (nonatomic, weak) UIImageView *iconView; //头像
 @property (nonatomic, weak) UIImageView *pictureView; //wordpress主题图片
 @property (nonatomic, weak) UILabel *nameLabel; //用户名一直为Chen Sihang
@@ -62,6 +53,8 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
+    UIFont *titlefont = [UIFont boldSystemFontOfSize:22];
+    
     if (self) {
         // 让自定义Cell和系统的cell一样, 一创建出来就拥有一些子控件提供给我们使用
         // 1.创建头像
@@ -98,7 +91,7 @@
         
         //6.创建标题
         UILabel *titleLabel = [[UILabel alloc] init];
-        titleLabel.font = JHTextFont;
+        titleLabel.font = titlefont;
         titleLabel.numberOfLines = 0;
         [self.contentView addSubview:titleLabel];
         self.titleLabel = titleLabel;
