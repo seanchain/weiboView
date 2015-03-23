@@ -21,7 +21,7 @@
 		7785ECF41ABDD73700B4C223 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 7785ECE91ABDD73700B4C223 /* AFURLRequestSerialization.m */; };
 		7785ECF51ABDD73700B4C223 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 7785ECEB1ABDD73700B4C223 /* AFURLResponseSerialization.m */; };
 		7785ECF61ABDD73700B4C223 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7785ECED1ABDD73700B4C223 /* AFURLSessionManager.m */; };
-		7799617D1AC03B5D00D4CE6B /* AKTA.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7799617C1AC03B5D00D4CE6B /* AKTA.plist */; };
+		779961811AC0445D00D4CE6B /* csh.plist in Resources */ = {isa = PBXBuildFile; fileRef = 779961801AC0445D00D4CE6B /* csh.plist */; };
 		77D346241ABFC2D500E87931 /* DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D346231ABFC2D500E87931 /* DetailController.m */; };
 		7DC486761AA581FB00A075F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC486751AA581FB00A075F4 /* main.m */; };
 		7DC486791AA581FB00A075F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC486781AA581FB00A075F4 /* AppDelegate.m */; };
@@ -86,7 +86,7 @@
 		7785ECEB1ABDD73700B4C223 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		7785ECEC1ABDD73700B4C223 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		7785ECED1ABDD73700B4C223 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
-		7799617C1AC03B5D00D4CE6B /* AKTA.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AKTA.plist; sourceTree = "<group>"; };
+		779961801AC0445D00D4CE6B /* csh.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = csh.plist; sourceTree = "<group>"; };
 		77D346221ABFC2D500E87931 /* DetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailController.h; sourceTree = "<group>"; };
 		77D346231ABFC2D500E87931 /* DetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailController.m; sourceTree = "<group>"; };
 		7DC486701AA581FB00A075F4 /* 微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -211,7 +211,7 @@
 		7DC486721AA581FB00A075F4 /* 微博 */ = {
 			isa = PBXGroup;
 			children = (
-				7799617C1AC03B5D00D4CE6B /* AKTA.plist */,
+				779961801AC0445D00D4CE6B /* csh.plist */,
 				772179211AC039AD0058649B /* Class */,
 				7785ECDA1ABDD73700B4C223 /* AFNetworking */,
 				7785ECD11ABDC76100B4C223 /* HTMLParser */,
@@ -370,11 +370,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DC486AB1AA5847500A075F4 /* 50.jpeg in Resources */,
+				779961811AC0445D00D4CE6B /* csh.plist in Resources */,
 				7DC486AA1AA5847500A075F4 /* 424324.jpeg in Resources */,
 				7DC486B41AA584C500A075F4 /* statuses.plist in Resources */,
 				7DC486AE1AA5847500A075F4 /* 4934348604.jpeg in Resources */,
 				7DC486B01AA5847500A075F4 /* 6289891986.jpeg in Resources */,
-				7799617D1AC03B5D00D4CE6B /* AKTA.plist in Resources */,
 				7DC4867F1AA581FB00A075F4 /* Main.storyboard in Resources */,
 				7DC486B11AA5847500A075F4 /* 926680527.jpeg in Resources */,
 				7DC486A91AA5847500A075F4 /* 238221586.jpeg in Resources */,
