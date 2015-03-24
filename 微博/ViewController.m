@@ -105,7 +105,7 @@ NSMutableArray *titles;
             NSArray *paras = [node findChildTags:@"p"];
             NSString *text = [[paras objectAtIndex:0] allContents];
             NSMutableDictionary *tempdic = [[NSMutableDictionary alloc] init];
-            tempdic[@"name"] = @"陈思行没基础";
+            tempdic[@"name"] = @"Chen Sihang";
             //tempdic[@"icon"] = @"http://www.chensihang.com/CSHiOS/portraits/cs.jpg";
             tempdic[@"icon"] = @"http://localhost:8888/pic/cs.jpg";
             tempdic[@"text"] = text;

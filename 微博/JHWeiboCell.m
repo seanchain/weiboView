@@ -138,7 +138,6 @@
     self.nameLabel.text = weibo.name;
     self.nameLabel.textColor = [UIColor blackColor];
     self.nameLabel.font = [UIFont boldSystemFontOfSize:15];
-    
     // 设置发博时间
     self.timeLabel.text = weibo.time;
     self.timeLabel.textColor = [UIColor grayColor];
