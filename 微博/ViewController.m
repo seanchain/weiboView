@@ -31,7 +31,7 @@ NSMutableArray *titles;
     [super viewDidLoad];
     self.title = @"沉思·航";
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
-    self.navigationController.navigationBar.barTintColor = bolue;
+    self.navigationController.navigationBar.barTintColor = wuwangcao;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
     
