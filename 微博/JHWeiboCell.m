@@ -18,7 +18,7 @@
 
 @property (nonatomic, weak) UIImageView *iconView; //头像
 @property (nonatomic, weak) UIImageView *pictureView; //wordpress主题图片
-@property (nonatomic, weak) UILabel *nameLabel; //用户名一直为Chen Sihang
+@property (nonatomic, weak) UILabel *nameLabel; 
 @property (nonatomic, weak) UILabel *introLabel; //文章第一段的内容
 @property (nonatomic, weak) UILabel *timeLabel; //发帖时间的label
 @property (nonatomic, weak) UILabel *categories; //当前博文所属的类型

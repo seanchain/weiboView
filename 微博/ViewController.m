@@ -24,6 +24,7 @@
 @implementation ViewController
 
 NSIndexPath *idxpth;
+NSMutableArray *posts;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -78,7 +79,7 @@ NSIndexPath *idxpth;
         NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
         NSArray *arr = [json objectForKey:@"posts"];
-        NSMutableArray *posts = [[NSMutableArray alloc] init];
+        posts = [[NSMutableArray alloc] init];
         NSMutableArray *titles = [[NSMutableArray alloc] init];
         NSMutableArray *thumbnails = [[NSMutableArray alloc] init];
         NSMutableArray *dates = [[NSMutableArray alloc] init];
@@ -96,7 +97,6 @@ NSIndexPath *idxpth;
             else
                 [thumbnails addObject:tempthumbnail];
         }
-        NSLog(@"%@", titles);
         NSMutableArray *dictarrs = [[NSMutableArray alloc] init];
         int count = 0;
         for (NSString *str in posts){
@@ -117,8 +117,6 @@ NSIndexPath *idxpth;
         }
         
         dictarrs[0][@"picture"] = @"http://localhost:8888/pic/profile.jpg";
-        NSLog(@"%@", dictarrs);
-
         
         
         for (NSDictionary *dict in dictarrs) {
@@ -154,7 +152,7 @@ NSIndexPath *idxpth;
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     id destController = segue.destinationViewController;
-    [destController setValue:idxpth forKey:@"indexpath"];
+    [destController setValue:posts[idxpth.row] forKey:@"content"];
 }
 
 

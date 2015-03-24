@@ -14,9 +14,15 @@
 
 @implementation DetailController
 
+@synthesize content;
+@synthesize webview;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"%lu", _indexpath.row);
+    NSString *con = (NSString *)content;
+    NSLog(@"%@", con);
+    NSURL *baseURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
+    [webview loadHTMLString:(NSString*)content baseURL:baseURL];
     // Do any additional setup after loading the view.
 }
 
