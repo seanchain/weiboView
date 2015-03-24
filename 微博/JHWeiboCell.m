@@ -117,7 +117,7 @@
     NJWeibo *weibo = self.weiboFrame.weibo;
     
     
-    NSString *urlstr = [NSString stringWithFormat:@"http://www.chensihang.com/CSHiOS/portraits/cs.jpg"];
+    NSString *urlstr = [NSString stringWithFormat:@"http://localhost:8888/pic/cs.jpg"];
     NSURL *url = [NSURL URLWithString:urlstr];
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:req];

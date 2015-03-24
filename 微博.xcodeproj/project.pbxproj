@@ -22,6 +22,7 @@
 		7785ECF51ABDD73700B4C223 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 7785ECEB1ABDD73700B4C223 /* AFURLResponseSerialization.m */; };
 		7785ECF61ABDD73700B4C223 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7785ECED1ABDD73700B4C223 /* AFURLSessionManager.m */; };
 		779961811AC0445D00D4CE6B /* csh.plist in Resources */ = {isa = PBXBuildFile; fileRef = 779961801AC0445D00D4CE6B /* csh.plist */; };
+		779961861AC0E61A00D4CE6B /* ZuSimpelColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 779961851AC0E61A00D4CE6B /* ZuSimpelColor.m */; };
 		77D346241ABFC2D500E87931 /* DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D346231ABFC2D500E87931 /* DetailController.m */; };
 		7DC486761AA581FB00A075F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC486751AA581FB00A075F4 /* main.m */; };
 		7DC486791AA581FB00A075F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC486781AA581FB00A075F4 /* AppDelegate.m */; };
@@ -87,6 +88,8 @@
 		7785ECEC1ABDD73700B4C223 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		7785ECED1ABDD73700B4C223 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		779961801AC0445D00D4CE6B /* csh.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = csh.plist; sourceTree = "<group>"; };
+		779961841AC0E61A00D4CE6B /* ZuSimpelColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZuSimpelColor.h; sourceTree = "<group>"; };
+		779961851AC0E61A00D4CE6B /* ZuSimpelColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZuSimpelColor.m; sourceTree = "<group>"; };
 		77D346221ABFC2D500E87931 /* DetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailController.h; sourceTree = "<group>"; };
 		77D346231ABFC2D500E87931 /* DetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailController.m; sourceTree = "<group>"; };
 		7DC486701AA581FB00A075F4 /* 微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -211,6 +214,8 @@
 		7DC486721AA581FB00A075F4 /* 微博 */ = {
 			isa = PBXGroup;
 			children = (
+				779961841AC0E61A00D4CE6B /* ZuSimpelColor.h */,
+				779961851AC0E61A00D4CE6B /* ZuSimpelColor.m */,
 				779961801AC0445D00D4CE6B /* csh.plist */,
 				772179211AC039AD0058649B /* Class */,
 				7785ECDA1ABDD73700B4C223 /* AFNetworking */,
@@ -414,6 +419,7 @@
 				7785ECF01ABDD73700B4C223 /* AFHTTPSessionManager.m in Sources */,
 				7DDDCA2D1AA5921F00FA0EEE /* JHWeiboCell.m in Sources */,
 				7DDDCA301AA5C69100FA0EEE /* JHWeiboFrame.m in Sources */,
+				779961861AC0E61A00D4CE6B /* ZuSimpelColor.m in Sources */,
 				7DC486791AA581FB00A075F4 /* AppDelegate.m in Sources */,
 				772179271AC039AD0058649B /* CBStoreHouseRefreshControl.m in Sources */,
 				7785ECF21ABDD73700B4C223 /* AFSecurityPolicy.m in Sources */,

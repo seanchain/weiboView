@@ -12,6 +12,7 @@
 #import "JHWeiboFrame.h"
 #import "HTMLParser.h"
 #import "CBStoreHouseRefreshControl.h"
+#import "ZuSimpelColor.h"
 
 @interface ViewController ()
 
@@ -28,16 +29,14 @@ NSIndexPath *idxpth;
     [super viewDidLoad];
     self.title = @"沉思·航";
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithWhite:0.1 alpha:1];
+    self.navigationController.navigationBar.barTintColor = doubi;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
     
-    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_pattern"]];
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.backgroundColor = [UIColor colorWithWhite:45.f/255.f alpha:1];
+    self.tableView.backgroundColor = white;
     
     // Let the show begins
-    self.storeHouseRefreshControl = [CBStoreHouseRefreshControl attachToScrollView:self.tableView target:self refreshAction:@selector(refreshTriggered:) plist:@"csh" color:[UIColor whiteColor] lineWidth:1.5 dropHeight:80 scale:1 horizontalRandomness:150 reverseLoadingAnimation:YES internalAnimationFactor:0.5];
+    self.storeHouseRefreshControl = [CBStoreHouseRefreshControl attachToScrollView:self.tableView target:self refreshAction:@selector(refreshTriggered:) plist:@"csh" color:shiqing lineWidth:1.5 dropHeight:80 scale:1 horizontalRandomness:150 reverseLoadingAnimation:YES internalAnimationFactor:0.5];
     
 }
 
@@ -73,8 +72,9 @@ NSIndexPath *idxpth;
         NSMutableArray *models = [NSMutableArray arrayWithCapacity:dictArray.count];
         
         
-        NSURL *url = [NSURL URLWithString:@"http://chensihang.com/blog/?json=1"];
-        NSString *str = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
+        //NSURL *url = [NSURL URLWithString:@"http://chensihang.com/blog/?json=1"];
+        //NSString *str = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
+        NSString *str = [NSString stringWithContentsOfFile:@"/Users/seanchain/Desktop/index.txt" encoding:NSUTF8StringEncoding error:nil];
         NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
         NSArray *arr = [json objectForKey:@"posts"];
@@ -105,8 +105,9 @@ NSIndexPath *idxpth;
             NSArray *paras = [node findChildTags:@"p"];
             NSString *text = [[paras objectAtIndex:0] allContents];
             NSMutableDictionary *tempdic = [[NSMutableDictionary alloc] init];
-            tempdic[@"name"] = @"Chen Sihang";
-            tempdic[@"icon"] = @"http://www.chensihang.com/CSHiOS/portraits/cs.jpg";
+            tempdic[@"name"] = @"陈思行没基础";
+            //tempdic[@"icon"] = @"http://www.chensihang.com/CSHiOS/portraits/cs.jpg";
+            tempdic[@"icon"] = @"http://localhost:8888/pic/cs.jpg";
             tempdic[@"text"] = text;
             tempdic[@"time"] = dates[count];
             tempdic[@"picture"] = thumbnails[count];
@@ -115,6 +116,7 @@ NSIndexPath *idxpth;
             [dictarrs addObject:tempdic];
         }
         
+        dictarrs[0][@"picture"] = @"http://localhost:8888/pic/profile.jpg";
         NSLog(@"%@", dictarrs);
 
         
