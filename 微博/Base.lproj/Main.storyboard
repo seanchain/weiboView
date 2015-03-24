@@ -38,18 +38,9 @@
                     <view key="view" contentMode="scaleToFill" id="aNj-ex-Kku">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WyM-iK-pZg">
-                                <rect key="frame" x="0.0" y="64" width="320" height="480"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </webView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="IuS-Iv-1gv"/>
-                    <connections>
-                        <outlet property="webview" destination="WyM-iK-pZg" id="Rsd-mr-r92"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r10-7N-Uog" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

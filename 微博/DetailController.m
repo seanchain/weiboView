@@ -14,15 +14,14 @@
 
 @implementation DetailController
 
-@synthesize content;
-@synthesize webview;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSString *con = (NSString *)content;
-    NSLog(@"%@", con);
+    CGRect webframe = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 20);
+    UIWebView *webview = [[UIWebView alloc] initWithFrame:webframe];
+    [self.view addSubview:webview];
     NSURL *baseURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
-    [webview loadHTMLString:(NSString*)content baseURL:baseURL];
+    [webview loadHTMLString:_content baseURL:baseURL];
     // Do any additional setup after loading the view.
 }
 

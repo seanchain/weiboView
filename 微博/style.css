@@ -9,22 +9,25 @@ p {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+h2 {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
 pre {
     position: relative;
     margin-bottom: 24px;
     border-radius: 3px;
-    border: 1px solid #C3CCD0;
+    border: 1px solid forestgreen;
     background: #FFF;
     overflow: hidden;
 }
 
 code {
-    font-family: "Menlo";
+    font-family: "Menlo", monospace;
     display: block;
     padding: 12px 24px;
     overflow-y: auto;
     font-weight: 300;
-    font-family: Menlo, monospace;
     font-size: 0.8em;
 }
 

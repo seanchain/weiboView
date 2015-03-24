@@ -147,7 +147,8 @@
 #define yellow [ZuSimpelColor R:255 G:255 B:0] //黄色
 #define yellowgreen [ZuSimpelColor R:154 G:205 B:50] //黄绿色
 #define shiqing [ZuSimpelColor R:22 G:133 B:169] //石青
-#define doubi [ZuSimpelColor R:102 G:102 B:102]
+#define doubi [ZuSimpelColor R:66 G:66 B:66]
+#define bolue [ZuSimpelColor R:155 G:149 B:201]
 
 
 

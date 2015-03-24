@@ -194,6 +194,8 @@
 		7DC486721AA581FB00A075F4 /* 微博 */ = {
 			isa = PBXGroup;
 			children = (
+				779961841AC0E61A00D4CE6B /* ZuSimpelColor.h */,
+				779961851AC0E61A00D4CE6B /* ZuSimpelColor.m */,
 				772179211AC039AD0058649B /* Class */,
 				7785ECDA1ABDD73700B4C223 /* AFNetworking */,
 				7785ECD11ABDC76100B4C223 /* HTMLParser */,
@@ -222,8 +224,6 @@
 			isa = PBXGroup;
 			children = (
 				7DC486B31AA584C500A075F4 /* statuses.plist */,
-				779961841AC0E61A00D4CE6B /* ZuSimpelColor.h */,
-				779961851AC0E61A00D4CE6B /* ZuSimpelColor.m */,
 				779961801AC0445D00D4CE6B /* csh.plist */,
 				7DC486741AA581FB00A075F4 /* Info.plist */,
 				7DC486751AA581FB00A075F4 /* main.m */,

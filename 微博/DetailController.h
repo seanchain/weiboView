@@ -10,8 +10,6 @@
 
 @interface DetailController : UIViewController
 
-@property (weak, nonatomic) NSIndexPath* content;
-@property (weak, nonatomic) IBOutlet UIWebView *webview;
-
+@property (weak, nonatomic) NSString* content;
 
 @end
