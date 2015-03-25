@@ -27,11 +27,20 @@ static NSString *const menuCellIdentifier = @"rotationCell";
 @implementation DetailController
 
 
+- (NSArray *)handleComments:(NSString*)str{
+    NSDictionary *d = (NSDictionary*)str;
+    //NSLog(@"");
+    NSLog(@"%@", [str componentsSeparatedByString:@"\n"]);
+    NSLog(@"%@", [str componentsSeparatedByString:@"\n"][2]);
+    return @[];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initiateMenuOptions];
     NSString *content = _dic[@"content"];
     NSString *comments = _dic[@"comments"];
+    NSArray *commentarr = [self handleComments:comments];
     CGRect webframe = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 30);
     UIWebView *webview = [[UIWebView alloc] initWithFrame:webframe];
     [self.view addSubview:webview];
@@ -41,7 +50,6 @@ static NSString *const menuCellIdentifier = @"rotationCell";
     NSArray *myButtonArray = [[NSArray alloc] initWithObjects:myAddButton, nil];
     myAddButton.tintColor = whitesmoke;
     self.navigationItem.rightBarButtonItems = myButtonArray;
-    NSLog(@"%@", comments);
     // Do any additional setup after loading the view.
 }
 

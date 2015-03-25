@@ -152,10 +152,10 @@ NSMutableArray *comments;
 {
     NSString *commentstr = [NSString stringWithFormat:@"%@", comments[idxpth.row]];
     NSString *str = [NSString stringWithFormat:@"<h2>%@</h2>%@", titles[idxpth.row], posts[idxpth.row]];
-    NSDictionary *rel = @{@"comments":commentstr, @"content":str};
-    NSLog(@"%@", rel);
+    NSDictionary *dic = @{@"comments":commentstr, @"content":str};
+    NSLog(@"%@", dic);
     id destController = segue.destinationViewController;
-    [destController setValue:rel forKey:@"dic"];
+    [destController setValue:dic forKey:@"dic"];
 }
 
 
