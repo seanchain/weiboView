@@ -30,19 +30,18 @@ static NSString *const menuCellIdentifier = @"rotationCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initiateMenuOptions];
-    
+    NSString *content = _dic[@"content"];
+    NSString *comments = _dic[@"comments"];
     CGRect webframe = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 30);
     UIWebView *webview = [[UIWebView alloc] initWithFrame:webframe];
     [self.view addSubview:webview];
     NSURL *baseURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
-    [webview loadHTMLString:_content baseURL:baseURL];
-    NSLog(@"%@", _content);
-    
+    [webview loadHTMLString:content baseURL:baseURL];    
     UIBarButtonItem *myAddButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(presentMenuButtonTapped:)];
     NSArray *myButtonArray = [[NSArray alloc] initWithObjects:myAddButton, nil];
     myAddButton.tintColor = whitesmoke;
     self.navigationItem.rightBarButtonItems = myButtonArray;
-    
+    NSLog(@"%@", comments);
     // Do any additional setup after loading the view.
 }
 

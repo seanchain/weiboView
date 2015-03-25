@@ -26,6 +26,7 @@
 NSIndexPath *idxpth;
 NSMutableArray *posts;
 NSMutableArray *titles;
+NSMutableArray *comments;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -65,68 +66,67 @@ NSMutableArray *titles;
     
 }
 
+- (NSMutableArray*)getContent{
+    NSMutableArray *models = [NSMutableArray new];
+    NSURL *url = [NSURL URLWithString:@"http://chensihang.com/blog/?json=1"];
+    NSString *str = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
+    NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+    NSArray *arr = [json objectForKey:@"posts"];
+    posts = [[NSMutableArray alloc] init];
+    titles = [[NSMutableArray alloc] init];
+    comments = [[NSMutableArray alloc] init];
+    NSMutableArray *thumbnails = [[NSMutableArray alloc] init];
+    NSMutableArray *dates = [[NSMutableArray alloc] init];
+    for (NSDictionary *contentdata in arr) {
+        NSString *temptitle = [contentdata objectForKey:@"title"];
+        [titles addObject:temptitle];
+        NSString *temparr = [contentdata objectForKey:@"content"];
+        [posts addObject:temparr];
+        NSString *tempcomment = [contentdata objectForKey:@"comments"];
+        [comments addObject:tempcomment];
+        NSString *tempthumbnail = [contentdata objectForKey:@"thumbnail"];
+        NSString *tempdate = [contentdata objectForKey:@"modified"];
+        [dates addObject:tempdate];
+        if (tempthumbnail == nil) {
+            [thumbnails addObject:@""];
+        }
+        else
+            [thumbnails addObject:tempthumbnail];
+    }
+    NSMutableArray *dictarrs = [[NSMutableArray alloc] init];
+    int count = 0;
+    for (NSString *str in posts){
+        HTMLParser *parser = [[HTMLParser alloc] initWithString:str error:nil];
+        HTMLNode *node = [parser body];
+        NSArray *paras = [node findChildTags:@"p"];
+        NSString *text = [[paras objectAtIndex:0] allContents];
+        NSMutableDictionary *tempdic = [[NSMutableDictionary alloc] init];
+        tempdic[@"name"] = @"Chen Sihang";
+        tempdic[@"icon"] = @"http://www.chensihang.com/CSHiOS/portraits/cs.jpg";
+        tempdic[@"text"] = text;
+        tempdic[@"time"] = dates[count];
+        tempdic[@"picture"] = thumbnails[count];
+        tempdic[@"title"] = titles[count];
+        count ++;
+        [dictarrs addObject:tempdic];
+    }
+    for (NSDictionary *dict in dictarrs) {
+        // 创建模型
+        NJWeibo *weibo = [NJWeibo weiboWithDict:dict];
+        // 根据模型数据创建frame模型
+        JHWeiboFrame *wbF = [[JHWeiboFrame alloc] init];
+        wbF.weibo = weibo;
+        [models addObject:wbF];
+    }
+    return models;
+}
+
 #pragma mark - 懒加载
 - (NSArray *)statusFrames
 {
     if (_statusFrames == nil) {
-        NSString *fullPath = [[NSBundle mainBundle] pathForResource:@"statuses.plist" ofType:nil];
-        NSArray *dictArray = [NSArray arrayWithContentsOfFile:fullPath];
-        NSMutableArray *models = [NSMutableArray arrayWithCapacity:dictArray.count];
-        
-        
-        NSURL *url = [NSURL URLWithString:@"http://chensihang.com/blog/?json=1"];
-        NSString *str = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
-        NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
-        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-        NSArray *arr = [json objectForKey:@"posts"];
-        posts = [[NSMutableArray alloc] init];
-        titles = [[NSMutableArray alloc] init];
-        NSMutableArray *thumbnails = [[NSMutableArray alloc] init];
-        NSMutableArray *dates = [[NSMutableArray alloc] init];
-        for (NSDictionary *contentdata in arr) {
-            NSString *temptitle = [contentdata objectForKey:@"title"];
-            [titles addObject:temptitle];
-            NSString *temparr = [contentdata objectForKey:@"content"];
-            [posts addObject:temparr];
-            NSString *tempthumbnail = [contentdata objectForKey:@"thumbnail"];
-            NSString *tempdate = [contentdata objectForKey:@"modified"];
-            [dates addObject:tempdate];
-            if (tempthumbnail == nil) {
-                [thumbnails addObject:@""];
-            }
-            else
-                [thumbnails addObject:tempthumbnail];
-        }
-        NSMutableArray *dictarrs = [[NSMutableArray alloc] init];
-        int count = 0;
-        for (NSString *str in posts){
-            HTMLParser *parser = [[HTMLParser alloc] initWithString:str error:nil];
-            HTMLNode *node = [parser body];
-            NSArray *paras = [node findChildTags:@"p"];
-            NSString *text = [[paras objectAtIndex:0] allContents];
-            NSMutableDictionary *tempdic = [[NSMutableDictionary alloc] init];
-            tempdic[@"name"] = @"Chen Sihang";
-            //tempdic[@"icon"] = @"http://www.chensihang.com/CSHiOS/portraits/cs.jpg";
-            tempdic[@"icon"] = @"http://localhost:8888/pic/cs.jpg";
-            tempdic[@"text"] = text;
-            tempdic[@"time"] = dates[count];
-            tempdic[@"picture"] = thumbnails[count];
-            tempdic[@"title"] = titles[count];
-            count ++;
-            [dictarrs addObject:tempdic];
-        }
-        
-        
-        
-        for (NSDictionary *dict in dictarrs) {
-            // 创建模型
-            NJWeibo *weibo = [NJWeibo weiboWithDict:dict];
-            // 根据模型数据创建frame模型
-            JHWeiboFrame *wbF = [[JHWeiboFrame alloc] init];
-            wbF.weibo = weibo;
-            [models addObject:wbF];
-        }
-        self.statusFrames = [models copy];
+        self.statusFrames = [[self getContent] copy];
     }
     return _statusFrames;
 }
@@ -150,9 +150,12 @@ NSMutableArray *titles;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    NSString *commentstr = [NSString stringWithFormat:@"%@", comments[idxpth.row]];
     NSString *str = [NSString stringWithFormat:@"<h2>%@</h2>%@", titles[idxpth.row], posts[idxpth.row]];
+    NSDictionary *rel = @{@"comments":commentstr, @"content":str};
+    NSLog(@"%@", rel);
     id destController = segue.destinationViewController;
-    [destController setValue:str forKey:@"content"];
+    [destController setValue:rel forKey:@"dic"];
 }
 
 
@@ -195,7 +198,8 @@ NSMutableArray *titles;
 - (void)finishRefreshControl
 {
     [self.storeHouseRefreshControl finishingLoading];
-    NSLog(@"Hello, world");
+    self.statusFrames = [[self getContent] copy];
+    [self.tableView reloadData];
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle
