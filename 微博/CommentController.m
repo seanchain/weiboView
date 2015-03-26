@@ -19,17 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    NSArray *familyNames = [UIFont familyNames];
-    for(NSString *familyName in familyNames)
-    {
-        NSLog(@"%@", familyName);
-        NSArray *fontNames = [UIFont fontNamesForFamilyName:familyName];
-        for(NSString *fontName in fontNames)
-        {
-            NSLog(@"\t%@", fontName);
-        }
-    }
     NSArray *cary = _cmt;
     NSLog(@"%@", cary);
     CGRect rect  = [[UIApplication sharedApplication] statusBarFrame];
@@ -48,7 +37,6 @@
     else{
         CGFloat bottonline = height;
         for (int i = 0; i < cary.count; i ++) {
-            //用户名
             UILabel *username = [[UILabel alloc] init];
             UILabel *time = [[UILabel alloc] init];
             UILabel *content = [[UILabel alloc] init];
