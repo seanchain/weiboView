@@ -27,20 +27,27 @@ static NSString *const menuCellIdentifier = @"rotationCell";
 @implementation DetailController
 
 
-- (NSArray *)handleComments:(NSString*)str{
-    NSDictionary *d = (NSDictionary*)str;
-    //NSLog(@"");
-    NSLog(@"%@", [str componentsSeparatedByString:@"\n"]);
-    NSLog(@"%@", [str componentsSeparatedByString:@"\n"][2]);
-    return @[];
+- (NSArray *)handleComments:(NSArray*)str{
+    NSUInteger len = str.count;
+    if (len == 0) {
+        return @[];
+    }
+    NSMutableArray *ret = [NSMutableArray new];
+    for (int i = 0; i < len; i ++) {
+        NSDictionary *dic = @{@"date":str[i][@"date"], @"name":str[i][@"name"], @"content":
+                                  str[i][@"content"]};
+        [ret addObject:dic];
+    }
+    return ret;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initiateMenuOptions];
     NSString *content = _dic[@"content"];
-    NSString *comments = _dic[@"comments"];
-    NSArray *commentarr = [self handleComments:comments];
+    NSArray *comments = _dic[@"comments"];
+    NSArray *commentarr = (NSArray*)[self handleComments:comments];
+    NSLog(@"%@", commentarr);
     CGRect webframe = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 30);
     UIWebView *webview = [[UIWebView alloc] initWithFrame:webframe];
     [self.view addSubview:webview];

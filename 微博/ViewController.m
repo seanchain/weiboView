@@ -83,7 +83,7 @@ NSMutableArray *comments;
         [titles addObject:temptitle];
         NSString *temparr = [contentdata objectForKey:@"content"];
         [posts addObject:temparr];
-        NSString *tempcomment = [contentdata objectForKey:@"comments"];
+        NSArray *tempcomment = [contentdata objectForKey:@"comments"];
         [comments addObject:tempcomment];
         NSString *tempthumbnail = [contentdata objectForKey:@"thumbnail"];
         NSString *tempdate = [contentdata objectForKey:@"modified"];
@@ -111,6 +111,7 @@ NSMutableArray *comments;
         count ++;
         [dictarrs addObject:tempdic];
     }
+    
     for (NSDictionary *dict in dictarrs) {
         // 创建模型
         NJWeibo *weibo = [NJWeibo weiboWithDict:dict];
@@ -150,10 +151,9 @@ NSMutableArray *comments;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSString *commentstr = [NSString stringWithFormat:@"%@", comments[idxpth.row]];
+    NSArray *commentstr = comments[idxpth.row];
     NSString *str = [NSString stringWithFormat:@"<h2>%@</h2>%@", titles[idxpth.row], posts[idxpth.row]];
     NSDictionary *dic = @{@"comments":commentstr, @"content":str};
-    NSLog(@"%@", dic);
     id destController = segue.destinationViewController;
     [destController setValue:dic forKey:@"dic"];
 }
