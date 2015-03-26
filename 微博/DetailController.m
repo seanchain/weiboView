@@ -26,6 +26,7 @@ static NSString *const menuCellIdentifier = @"rotationCell";
 
 @implementation DetailController
 
+NSArray *commentarr;
 
 - (NSArray *)handleComments:(NSArray*)str{
     NSUInteger len = str.count;
@@ -46,7 +47,7 @@ static NSString *const menuCellIdentifier = @"rotationCell";
     [self initiateMenuOptions];
     NSString *content = _dic[@"content"];
     NSArray *comments = _dic[@"comments"];
-    NSArray *commentarr = (NSArray*)[self handleComments:comments];
+    commentarr = (NSArray*)[self handleComments:comments];
     NSLog(@"%@", commentarr);
     CGRect webframe = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 30);
     UIWebView *webview = [[UIWebView alloc] initWithFrame:webframe];
@@ -59,6 +60,15 @@ static NSString *const menuCellIdentifier = @"rotationCell";
     self.navigationItem.rightBarButtonItems = myButtonArray;
     // Do any additional setup after loading the view.
 }
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    id destController = segue.destinationViewController;
+    [destController setValue:commentarr forKey:@"cmt"];
+    NSLog(@"%@", destController);
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -113,11 +123,17 @@ static NSString *const menuCellIdentifier = @"rotationCell";
 }
 
 
-#pragma mark - YALContextMenuTableViewDelegate
-
 - (void)contextMenuTableView:(YALContextMenuTableView *)contextMenuTableView didDismissWithIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"Menu dismissed with indexpath = %lu", indexPath.row);
-    
+    NSUInteger tap = indexPath.row;
+    NSLog(@"Menu dismissed with indexpath = %lu", tap);
+    if (tap == 1) {
+        [self performSegueWithIdentifier:@"commentHandle" sender:self.view];
+    }
+    if (tap == 2) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"我的评论" message:@"输入您的评论" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
+        [alertView show];
+    }
 }
 
 - (void)tableView:(YALContextMenuTableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

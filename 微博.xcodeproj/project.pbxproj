@@ -31,6 +31,7 @@
 		7785ECF41ABDD73700B4C223 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 7785ECE91ABDD73700B4C223 /* AFURLRequestSerialization.m */; };
 		7785ECF51ABDD73700B4C223 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 7785ECEB1ABDD73700B4C223 /* AFURLResponseSerialization.m */; };
 		7785ECF61ABDD73700B4C223 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7785ECED1ABDD73700B4C223 /* AFURLSessionManager.m */; };
+		7799610E1AC3D961009B3B15 /* CommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7799610D1AC3D961009B3B15 /* CommentController.m */; };
 		779961811AC0445D00D4CE6B /* csh.plist in Resources */ = {isa = PBXBuildFile; fileRef = 779961801AC0445D00D4CE6B /* csh.plist */; };
 		779961861AC0E61A00D4CE6B /* ZuSimpelColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 779961851AC0E61A00D4CE6B /* ZuSimpelColor.m */; };
 		77D346241ABFC2D500E87931 /* DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D346231ABFC2D500E87931 /* DetailController.m */; };
@@ -104,6 +105,8 @@
 		7785ECEB1ABDD73700B4C223 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		7785ECEC1ABDD73700B4C223 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		7785ECED1ABDD73700B4C223 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		7799610C1AC3D961009B3B15 /* CommentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentController.h; sourceTree = "<group>"; };
+		7799610D1AC3D961009B3B15 /* CommentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentController.m; sourceTree = "<group>"; };
 		779961801AC0445D00D4CE6B /* csh.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = csh.plist; sourceTree = "<group>"; };
 		779961841AC0E61A00D4CE6B /* ZuSimpelColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZuSimpelColor.h; sourceTree = "<group>"; };
 		779961851AC0E61A00D4CE6B /* ZuSimpelColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZuSimpelColor.m; sourceTree = "<group>"; };
@@ -265,6 +268,8 @@
 				7DDDCA2E1AA5C69100FA0EEE /* JHWeiboFrame.h */,
 				7DDDCA2F1AA5C69100FA0EEE /* JHWeiboFrame.m */,
 				7DC4867D1AA581FB00A075F4 /* Main.storyboard */,
+				7799610C1AC3D961009B3B15 /* CommentController.h */,
+				7799610D1AC3D961009B3B15 /* CommentController.m */,
 				77D346221ABFC2D500E87931 /* DetailController.h */,
 				77D346231ABFC2D500E87931 /* DetailController.m */,
 				7750DE4F1AC1C39E00B98ABA /* Images.xcassets */,
@@ -432,6 +437,7 @@
 				7785ECEF1ABDD73700B4C223 /* AFHTTPRequestOperationManager.m in Sources */,
 				7785ECD71ABDC76100B4C223 /* HTMLParser.m in Sources */,
 				7DC4867C1AA581FB00A075F4 /* ViewController.m in Sources */,
+				7799610E1AC3D961009B3B15 /* CommentController.m in Sources */,
 				7785ECF01ABDD73700B4C223 /* AFHTTPSessionManager.m in Sources */,
 				7DDDCA2D1AA5921F00FA0EEE /* JHWeiboCell.m in Sources */,
 				7DDDCA301AA5C69100FA0EEE /* JHWeiboFrame.m in Sources */,

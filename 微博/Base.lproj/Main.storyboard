@@ -41,10 +41,34 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="IuS-Iv-1gv"/>
+                    <connections>
+                        <segue destination="OVc-uf-AWq" kind="push" identifier="commentHandle" id="rZM-J6-nQo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r10-7N-Uog" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1101" y="449"/>
+        </scene>
+        <!--评论-->
+        <scene sceneID="FLP-1I-hXc">
+            <objects>
+                <viewController id="OVc-uf-AWq" customClass="CommentController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5ea-pf-4J6"/>
+                        <viewControllerLayoutGuide type="bottom" id="GtF-N7-Xd8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mh0-Ec-DPI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="评论" id="TYw-Gb-Tg3">
+                        <barButtonItem key="backBarButtonItem" title="后退" id="NpE-Yd-Y70"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oup-13-Tln" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1646" y="535"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cxV-vi-s52">
