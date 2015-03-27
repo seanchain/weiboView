@@ -34,6 +34,8 @@
 		7799610E1AC3D961009B3B15 /* CommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7799610D1AC3D961009B3B15 /* CommentController.m */; };
 		779961811AC0445D00D4CE6B /* csh.plist in Resources */ = {isa = PBXBuildFile; fileRef = 779961801AC0445D00D4CE6B /* csh.plist */; };
 		779961861AC0E61A00D4CE6B /* ZuSimpelColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 779961851AC0E61A00D4CE6B /* ZuSimpelColor.m */; };
+		779CE0A11AC551AA002653D6 /* JWBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 779CE09F1AC551AA002653D6 /* JWBlurView.m */; };
+		779CE0A41AC5523B002653D6 /* DetailController+ENPopUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 779CE0A31AC5523B002653D6 /* DetailController+ENPopUp.m */; };
 		77D346241ABFC2D500E87931 /* DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D346231ABFC2D500E87931 /* DetailController.m */; };
 		77DB5FD31AC12A6600647C43 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 77DB5FD21AC12A6600647C43 /* style.css */; };
 		77DB5FD61AC134D500647C43 /* Vollkorn-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 77DB5FD51AC1303300647C43 /* Vollkorn-Bold.ttf */; };
@@ -110,6 +112,10 @@
 		779961801AC0445D00D4CE6B /* csh.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = csh.plist; sourceTree = "<group>"; };
 		779961841AC0E61A00D4CE6B /* ZuSimpelColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZuSimpelColor.h; sourceTree = "<group>"; };
 		779961851AC0E61A00D4CE6B /* ZuSimpelColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZuSimpelColor.m; sourceTree = "<group>"; };
+		779CE09E1AC551AA002653D6 /* JWBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWBlurView.h; sourceTree = "<group>"; };
+		779CE09F1AC551AA002653D6 /* JWBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWBlurView.m; sourceTree = "<group>"; };
+		779CE0A21AC5523B002653D6 /* DetailController+ENPopUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DetailController+ENPopUp.h"; sourceTree = "<group>"; };
+		779CE0A31AC5523B002653D6 /* DetailController+ENPopUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DetailController+ENPopUp.m"; sourceTree = "<group>"; };
 		77D346221ABFC2D500E87931 /* DetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailController.h; sourceTree = "<group>"; };
 		77D346231ABFC2D500E87931 /* DetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailController.m; sourceTree = "<group>"; };
 		77DB5FD21AC12A6600647C43 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
@@ -250,6 +256,8 @@
 		7DC486721AA581FB00A075F4 /* 微博 */ = {
 			isa = PBXGroup;
 			children = (
+				779CE0A21AC5523B002653D6 /* DetailController+ENPopUp.h */,
+				779CE0A31AC5523B002653D6 /* DetailController+ENPopUp.m */,
 				770D60351AC1BA5600258560 /* ContextMenuCell */,
 				7785ECDA1ABDD73700B4C223 /* AFNetworking */,
 				770D602A1AC1B8F800258560 /* YALContextMenu */,
@@ -264,6 +272,8 @@
 				7DC4867A1AA581FB00A075F4 /* ViewController.h */,
 				7DC4867B1AA581FB00A075F4 /* ViewController.m */,
 				7DDDCA2B1AA5921F00FA0EEE /* JHWeiboCell.h */,
+				779CE09E1AC551AA002653D6 /* JWBlurView.h */,
+				779CE09F1AC551AA002653D6 /* JWBlurView.m */,
 				7DDDCA2C1AA5921F00FA0EEE /* JHWeiboCell.m */,
 				7DDDCA2E1AA5C69100FA0EEE /* JHWeiboFrame.h */,
 				7DDDCA2F1AA5C69100FA0EEE /* JHWeiboFrame.m */,
@@ -426,7 +436,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				779CE0A11AC551AA002653D6 /* JWBlurView.m in Sources */,
 				772179261AC039AD0058649B /* BarItem.m in Sources */,
+				779CE0A41AC5523B002653D6 /* DetailController+ENPopUp.m in Sources */,
 				7785ECF61ABDD73700B4C223 /* AFURLSessionManager.m in Sources */,
 				7785ECF31ABDD73700B4C223 /* AFURLConnectionOperation.m in Sources */,
 				770D60331AC1B8F800258560 /* YALContextMenuTableView.m in Sources */,

@@ -11,6 +11,7 @@
 #import "YALContextMenuTableView.h"
 #import "YALNavigationBar.h"
 #import "ZuSimpelColor.h"
+#import "DetailController+ENPopUp.h"
 
 static NSString *const menuCellIdentifier = @"rotationCell";
 
@@ -130,9 +131,9 @@ NSArray *commentarr;
         [self performSegueWithIdentifier:@"commentHandle" sender:self.view];
     }
     if (tap == 2) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"我的评论" message:@"输入您的评论" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-        alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
-        [alertView show];
+        UIViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"PopUp"];
+        vc.view.frame = CGRectMake(0, 0, 270.0f, 200.0f);
+        [self presentPopUpViewController:vc];
     }
 }
 

@@ -70,6 +70,26 @@
             </objects>
             <point key="canvasLocation" x="1646" y="535"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="DIV-PE-27w">
+            <objects>
+                <viewController storyboardIdentifier="PopUp" id="ZAc-Fh-zNp" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="U5O-Ob-4qz"/>
+                        <viewControllerLayoutGuide type="bottom" id="rvK-jw-Cry"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jCx-fW-O50">
+                        <rect key="frame" x="0.0" y="0.0" width="270" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="270" height="200"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YKN-Xx-XjE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1986" y="456"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="cxV-vi-s52">
             <objects>
