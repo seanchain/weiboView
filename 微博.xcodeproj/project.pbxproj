@@ -37,6 +37,7 @@
 		779CE0A11AC551AA002653D6 /* JWBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 779CE09F1AC551AA002653D6 /* JWBlurView.m */; };
 		779CE0A41AC5523B002653D6 /* DetailController+ENPopUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 779CE0A31AC5523B002653D6 /* DetailController+ENPopUp.m */; };
 		77D346241ABFC2D500E87931 /* DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D346231ABFC2D500E87931 /* DetailController.m */; };
+		77D99D221AC64DCE0049318A /* Func.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D99D211AC64DCE0049318A /* Func.m */; };
 		77DB5FD31AC12A6600647C43 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 77DB5FD21AC12A6600647C43 /* style.css */; };
 		77DB5FD61AC134D500647C43 /* Vollkorn-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 77DB5FD51AC1303300647C43 /* Vollkorn-Bold.ttf */; };
 		77DB5FD71AC134D500647C43 /* Senty.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 77DB5FD41AC12EB000647C43 /* Senty.ttf */; };
@@ -118,6 +119,8 @@
 		779CE0A31AC5523B002653D6 /* DetailController+ENPopUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DetailController+ENPopUp.m"; sourceTree = "<group>"; };
 		77D346221ABFC2D500E87931 /* DetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailController.h; sourceTree = "<group>"; };
 		77D346231ABFC2D500E87931 /* DetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailController.m; sourceTree = "<group>"; };
+		77D99D201AC64DCE0049318A /* Func.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Func.h; sourceTree = "<group>"; };
+		77D99D211AC64DCE0049318A /* Func.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Func.m; sourceTree = "<group>"; };
 		77DB5FD21AC12A6600647C43 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
 		77DB5FD41AC12EB000647C43 /* Senty.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Senty.ttf; sourceTree = "<group>"; };
 		77DB5FD51AC1303300647C43 /* Vollkorn-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vollkorn-Bold.ttf"; sourceTree = "<group>"; };
@@ -258,6 +261,8 @@
 			children = (
 				779CE0A21AC5523B002653D6 /* DetailController+ENPopUp.h */,
 				779CE0A31AC5523B002653D6 /* DetailController+ENPopUp.m */,
+				77D99D201AC64DCE0049318A /* Func.h */,
+				77D99D211AC64DCE0049318A /* Func.m */,
 				770D60351AC1BA5600258560 /* ContextMenuCell */,
 				7785ECDA1ABDD73700B4C223 /* AFNetworking */,
 				770D602A1AC1B8F800258560 /* YALContextMenu */,
@@ -437,6 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				779CE0A11AC551AA002653D6 /* JWBlurView.m in Sources */,
+				77D99D221AC64DCE0049318A /* Func.m in Sources */,
 				772179261AC039AD0058649B /* BarItem.m in Sources */,
 				779CE0A41AC5523B002653D6 /* DetailController+ENPopUp.m in Sources */,
 				7785ECF61ABDD73700B4C223 /* AFURLSessionManager.m in Sources */,

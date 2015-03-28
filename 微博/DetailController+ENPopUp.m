@@ -10,6 +10,7 @@
 #import "JWBlurView.h"
 #import <objc/runtime.h>
 #import "ZuSimpelColor.h"
+#import "Func.h"
 
 
 static void * ENPopupViewControllerPropertyKey = &ENPopupViewControllerPropertyKey;
@@ -53,7 +54,8 @@ UITextView *textview;
     UIView *popupView = [sourceView viewWithTag:kENPopUpViewTag];
     UIView *overlayView = [sourceView viewWithTag:kENPopUpOverlayViewTag];
     [self performDismissAnimationInSourceView:sourceView withBlurView:blurView popupView:popupView overlayView:overlayView completion:nil];
-    NSLog(@"%@", textview.text);
+    NSString *usercomment = textview.text;
+    [Func postRequestWithText:usercomment];
 }
 
 #pragma mark - Getters & Setters
