@@ -19,6 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIScrollView *scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height * 2)];
+    //[self.view addSubview:scrollview];
+    scrollview.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height);
     NSArray *cary = _cmt;
     NSLog(@"%@", cary);
     CGRect rect  = [[UIApplication sharedApplication] statusBarFrame];
@@ -58,10 +61,11 @@
             content.numberOfLines = 0;
             time.textColor = gray;
             bottonline = CGRectGetMaxY(line.frame);
-            [self.view addSubview:username];
-            [self.view addSubview:time];
-            [self.view addSubview:content];
-            [self.view addSubview:line];
+            [scrollview addSubview:username];
+            [scrollview addSubview:time];
+            [scrollview addSubview:content];
+            [scrollview addSubview:line];
+            [self.view addSubview:scrollview];
         }
     }
 }
