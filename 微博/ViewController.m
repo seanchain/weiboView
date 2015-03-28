@@ -27,6 +27,8 @@ NSIndexPath *idxpth;
 NSMutableArray *posts;
 NSMutableArray *titles;
 NSMutableArray *comments;
+NSMutableArray *ids;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -76,6 +78,7 @@ NSMutableArray *comments;
     posts = [[NSMutableArray alloc] init];
     titles = [[NSMutableArray alloc] init];
     comments = [[NSMutableArray alloc] init];
+    ids = [[NSMutableArray alloc] init];
     NSMutableArray *thumbnails = [[NSMutableArray alloc] init];
     NSMutableArray *dates = [[NSMutableArray alloc] init];
     for (NSDictionary *contentdata in arr) {
@@ -87,6 +90,8 @@ NSMutableArray *comments;
         [comments addObject:tempcomment];
         NSString *tempthumbnail = [contentdata objectForKey:@"thumbnail"];
         NSString *tempdate = [contentdata objectForKey:@"modified"];
+        NSString *postid = [contentdata objectForKey:@"id"];
+        [ids addObject:postid];
         [dates addObject:tempdate];
         if (tempthumbnail == nil) {
             [thumbnails addObject:@""];
@@ -151,9 +156,10 @@ NSMutableArray *comments;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    NSString *postid = ids[idxpth.row];
     NSArray *commentstr = comments[idxpth.row];
     NSString *str = [NSString stringWithFormat:@"<h2>%@</h2>%@", titles[idxpth.row], posts[idxpth.row]];
-    NSDictionary *dic = @{@"comments":commentstr, @"content":str};
+    NSDictionary *dic = @{@"comments":commentstr, @"content":str, @"id":postid};
     id destController = segue.destinationViewController;
     [destController setValue:dic forKey:@"dic"];
 }

@@ -11,6 +11,7 @@
 #import <objc/runtime.h>
 #import "ZuSimpelColor.h"
 #import "Func.h"
+#import "DetailController+ENPopUp.h"
 
 
 static void * ENPopupViewControllerPropertyKey = &ENPopupViewControllerPropertyKey;
@@ -25,12 +26,16 @@ static NSInteger const kENPopUpBluredViewTag    = 351303;
 @implementation DetailController (ENPopUp)
 
 UITextView *textview;
+NSString *postid;
+
 
 #pragma mark - Public Methods
-- (void)presentPopUpViewController:(UIViewController *)popupViewController
+- (void)presentPopUpViewController:(UIViewController *)popupViewController with:(NSString*)pid
 {
+    postid = pid;
     [self presentPopUpViewController:popupViewController completion:nil];
 }
+
 
 - (void)presentPopUpViewController:(UIViewController *)popupViewController completion:(void (^)(void))completionBlock
 {
@@ -55,7 +60,7 @@ UITextView *textview;
     UIView *overlayView = [sourceView viewWithTag:kENPopUpOverlayViewTag];
     [self performDismissAnimationInSourceView:sourceView withBlurView:blurView popupView:popupView overlayView:overlayView completion:nil];
     NSString *usercomment = textview.text;
-    [Func postRequestWithText:usercomment];
+    [Func postRequestWithText:usercomment withID:postid];
 }
 
 #pragma mark - Getters & Setters

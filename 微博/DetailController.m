@@ -28,6 +28,7 @@ static NSString *const menuCellIdentifier = @"rotationCell";
 @implementation DetailController
 
 NSArray *commentarr;
+NSString *postid;
 
 - (NSArray *)handleComments:(NSArray*)str{
     NSUInteger len = str.count;
@@ -48,6 +49,8 @@ NSArray *commentarr;
     [self initiateMenuOptions];
     NSString *content = _dic[@"content"];
     NSArray *comments = _dic[@"comments"];
+    postid = _dic[@"id"];
+    NSLog(@"%@", postid);
     commentarr = (NSArray*)[self handleComments:comments];
     NSLog(@"%@", commentarr);
     CGRect webframe = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 30);
@@ -133,7 +136,8 @@ NSArray *commentarr;
     if (tap == 2) {
         UIViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"PopUp"];
         vc.view.frame = CGRectMake(0, 0, 270.0f, 200.0f);
-        [self presentPopUpViewController:vc];
+
+        [self presentPopUpViewController:vc with:postid];
     }
 }
 

@@ -10,10 +10,10 @@
 
 @implementation Func
 
-+(void)postRequestWithText:(NSString *)text
++(void)postRequestWithText:(NSString *)text withID:(NSString *)postid
 {
     NSString *url = @"http://www.chensihang.com/blog/wp-comments-post.php";
-    NSString *postInfo = [NSString stringWithFormat:@"author=111&email=seanchain@outlook.com&url=chensihang.com&comment=%@&comment_post_ID=23&comment_parent=0",text];
+    NSString *postInfo = [NSString stringWithFormat:@"author=111&email=seanchain@outlook.com&url=chensihang.com&comment=%@&comment_post_ID=%@&comment_parent=0",text, postid];
     NSString *myRequestString = [NSString stringWithString:postInfo];
     
     // Create Data from request

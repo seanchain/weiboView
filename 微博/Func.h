@@ -10,6 +10,6 @@
 
 @interface Func : NSObject
 
-+(void)postRequestWithText:(NSString*)text;
++(void)postRequestWithText:(NSString*)text withID:(NSString*)postid;
 
 @end
